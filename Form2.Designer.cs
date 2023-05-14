@@ -28,22 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            timer1 = new System.Windows.Forms.Timer(components);
+            label1 = new Label();
+            textBox1 = new TextBox();
+            SuspendLayout();
+            // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(303, 42);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 20);
+            label1.TabIndex = 0;
+            label1.Text = "label1";
+            label1.Click += label1_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(303, 12);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(125, 27);
+            textBox1.TabIndex = 1;
+            textBox1.Text = "Pozostały czas:";
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 317);
-            this.Name = "Form2";
-            this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
-            this.ResumeLayout(false);
-
-            
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(606, 423);
+            Controls.Add(textBox1);
+            Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "Form2";
+            Text = "Form2";
+            Load += Form2_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer timer1;
+        private Label label1;
+        private TextBox textBox1;
     }
 }
